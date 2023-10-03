@@ -20,12 +20,12 @@
         </div>
         <br>
         <div>
-            {{ form.birthdate.label }}
-            {{ form.birthdate() }}
+            {{ form.birthdate.label }} {# Vykreslení popisku pole #}
+            {{ form.birthdate() }} {# Vykreslení pole pro datum narození #}
         </div>
         <br>
-            {{ form.club_town.label }}
-            {{ form.club_town() }}
+            {{ form.club_town.label }} {# Vykreslení popisku pole #}
+            {{ form.club_town() }} {# Vykreslení pole pro oddíl nebo město #}
         <br>
         <div>
             {{ form.submit() }} {# Vykreslení tlačítka pro odeslání formuláře #}
