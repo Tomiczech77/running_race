@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlašimský posvícenský běh</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }} {# Přidá CSRF token pro ochranu formuláře #}
+        <div>
+            {{ form.name.label }} {# Vykreslení popisku pole #}
+            {{ form.name() }} {# Vykreslení pole pro jméno #}
+        </div>
+        <div>
+            {{ form.submit() }} {# Vykreslení tlačítka pro odeslání formuláře #}
+        </div>
+    </form>
+</body>
+</html>
