@@ -10,9 +10,23 @@
     <form method="POST">
         {{ form.hidden_tag() }} {# Přidá CSRF token pro ochranu formuláře #}
         <div>
-            {{ form.name.label }} {# Vykreslení popisku pole #}
-            {{ form.name() }} {# Vykreslení pole pro jméno #}
+            {{ form.first_name.label }} {# Vykreslení popisku pole #}
+            {{ form.first_name() }} {# Vykreslení pole pro jméno #}
         </div>
+        <br>
+        <div>
+            {{ form.second_name.label }} {# Vykreslení popisku pole #}
+            {{ form.second_name() }} {# Vykreslení pole pro příjmení #}
+        </div>
+        <br>
+        <div>
+            {{ form.birthdate.label }}
+            {{ form.birthdate() }}
+        </div>
+        <br>
+            {{ form.club_town.label }}
+            {{ form.club_town() }}
+        <br>
         <div>
             {{ form.submit() }} {# Vykreslení tlačítka pro odeslání formuláře #}
         </div>
