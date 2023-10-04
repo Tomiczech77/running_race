@@ -6,7 +6,7 @@ app = Flask(__name__) # Argument __name__ je jméno modulu – Flask podle něj 
 app.secret_key = "secretKey"  # Secret key pro CSRF ochranu, měl by být unikátní pro tvou aplikaci
 
 # Definice formuláře
-class MyForm(FlaskForm):
+class RegisterForm(FlaskForm):
     first_name = StringField("Jméno")
     second_name = StringField("Příjmení")
     birthdate = DateField('Datum narození')
@@ -17,7 +17,7 @@ class MyForm(FlaskForm):
 @app.route("/", methods=["GET", "POST"]) # na „domovské stránce“ bude k dispozici obsah, který vrátí funkce index
 def index():
     title_page = "Registrace"
-    form = MyForm()  # Vytvoření instance formuláře
+    form = RegisterForm()  # Vytvoření instance formuláře
 
     if form.validate_on_submit():  # Pokud byl formulář odeslán a data jsou validní
         first_name = form.first_name.data
