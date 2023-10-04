@@ -24,8 +24,15 @@
             {{ form.birthdate() }} {# Vykreslení pole pro datum narození #}
         </div>
         <br>
+        <div>
             {{ form.club_town.label }} {# Vykreslení popisku pole #}
             {{ form.club_town() }} {# Vykreslení pole pro oddíl nebo město #}
+        </div>
+        <br>
+        <div>
+            {{ form.email.label }} {# Vykreslení popisku pole #}
+            {{ form.email() }} {# Vykreslení pole pro email #}
+        </div>
         <br>
         <div>
             {{ form.submit() }} {# Vykreslení tlačítka pro odeslání formuláře #}
