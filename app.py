@@ -1,16 +1,17 @@
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, DateField
+from wtforms.validators import DataRequired, Length
 
 app = Flask(__name__) # Argument __name__ je jméno modulu – Flask podle něj hledá soubory, které k aplikaci patří (static a templates).
 app.secret_key = "secretKey"  # Secret key pro CSRF ochranu, měl by být unikátní pro tvou aplikaci
 
 # Definice formuláře
 class RegisterForm(FlaskForm):
-    first_name = StringField("Jméno")
-    second_name = StringField("Příjmení")
-    birthdate = DateField('Datum narození')
-    club_town = StringField("Oddíl/Město")
+    first_name = StringField("Jméno", validators=[DataRequired(), Length(min=2, max=20)])
+    second_name = StringField("Příjmení", validators=[DataRequired(), Length(min=2, max=20)])
+    birthdate = DateField("Datum narození", validators=[DataRequired()])
+    club_town = StringField("Oddíl/Město", validators=[DataRequired(), Length(min=2, max=20)])
     submit = SubmitField("Odeslat")
 
 # Routing pro zobrazení a zpracování formuláře
