@@ -20,6 +20,11 @@
         </div>
         <br>
         <div>
+            {{ form.sex.label }} {# Vykreslení popisku pole #}
+            {{ form.sex() }} {# Vykreslení pole pro pohlaví #}
+        </div>
+        <br>
+        <div>
             {{ form.birthdate.label }} {# Vykreslení popisku pole #}
             {{ form.birthdate() }} {# Vykreslení pole pro datum narození #}
         </div>
@@ -35,6 +40,11 @@
             {% if form.email.errors %}
                 <span class="error">{{ form.email.errors[0] }}</span>
             {% endif %}
+        </div>
+        <br>
+        <div>
+            {{ form.track.label }} {# Vykreslení popisku pole #}
+            {{ form.track() }} {# Vykreslení pole pro zvolenou trať #}
         </div>
         <br>
         <div>
