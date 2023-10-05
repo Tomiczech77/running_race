@@ -29,5 +29,11 @@ def index():
         email = form.email.data
 
         return f"Vítej, {first_name}, {second_name}, {birthdate}, {club_town}, {email}!"
-
+    
     return render_template("index.html", title = title_page, form=form)
+
+@app.route("/result", methods=["GET", "POST"]) # na „domovské stránce“ bude k dispozici obsah, který vrátí funkce index
+def result():
+    result = "Registrace proběhla úspěšně."
+    
+    return render_template("result.html", result = result)

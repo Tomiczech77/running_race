@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>{{ title }}</h1>
-    <form method="POST">
+    <form action = "/result" method="POST">
         {{ form.hidden_tag() }} {# Přidá CSRF token pro ochranu formuláře #}
         <div>
             {{ form.first_name.label }} {# Vykreslení popisku pole #}
