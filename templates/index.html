@@ -32,6 +32,9 @@
         <div>
             {{ form.email.label }} {# Vykreslení popisku pole #}
             {{ form.email() }} {# Vykreslení pole pro email #}
+            {% if form.email.errors %}
+                <span class="error">{{ form.email.errors[0] }}</span>
+            {% endif %}
         </div>
         <br>
         <div>
